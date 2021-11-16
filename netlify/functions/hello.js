@@ -6,6 +6,6 @@ exports.handler = async function(event, context) {
 
   return {
 		statusCode: 200,
-		body: `Well hello there, ${name}!\nHere's some info: ${event.headers['user-agent']}`,
+		body: `Well hello there, ${name}!\nRequest from platform: ${event.headers['sec-ch-ua-platform']}`,
 	}	
 }
