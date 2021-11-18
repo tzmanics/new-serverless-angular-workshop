@@ -1,6 +1,6 @@
 export default {
-  name: 'productVariant',
-  title: 'Product Variant',
+  name: 'organizationVariant',
+  title: 'Organization Variant',
   type: 'object',
   fields: [
     {
@@ -9,14 +9,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'price',
-      title: 'Price',
+      name: 'amount',
+      title: 'Amount',
       type: 'number',
-    },
-    {
-      name: 'sku',
-      title: 'SKU',
-      type: 'string',
     },
     {
       name: 'images',

@@ -1,11 +1,11 @@
 export default {
-  name: 'product',
-  title: 'Product',
+  name: 'organization',
+  title: 'Organization',
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
+      name: 'name',
+      title: 'Name',
       type: 'string',
     },
     {
@@ -18,9 +18,14 @@ export default {
       },
     },
     {
-      name: 'defaultProductVariant',
+      name: 'website',
+      title: 'Webstie',
+      type: 'url'
+    },
+    {
+      name: 'defaultOrganizationVariant',
       title: 'Default variant',
-      type: 'productVariant',
+      type: 'organizationVariant',
     },
     {
       name: 'tags',
@@ -50,10 +55,15 @@ export default {
       type: 'array',
       of: [{ type: 'block' }],
     },
+    {
+      name: 'twitter',
+      title: 'Twitter',
+      type: 'url',
+    }
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
     },
   },
 };

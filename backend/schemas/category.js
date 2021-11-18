@@ -22,16 +22,5 @@ export default {
       title: 'Description',
       type: 'text',
     },
-    {
-      name: 'parents',
-      title: 'Parents',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
-    },
   ],
 };
