@@ -24,7 +24,7 @@ exports.handler = async () => {
 				name: organization.name,
 				description: organization.blurb,
 				url: `${process.env.URL}/.netlify/functions/getOrgs`,
-				donationAmount: organization.defaultVariant.amount,
+				donationAmount: JSON.stringify(organization),
 				body: blocksToHtml({blocks: organization.body}),
 				website: organization.website,
 				twitter: organization.twitter,
