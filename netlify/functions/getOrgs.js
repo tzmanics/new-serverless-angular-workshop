@@ -1,9 +1,6 @@
 const sanityClient = require('@sanity/client');
 const imageUrlBuilder = require('@sanity/image-url');
 const blocksToHtml = require('@sanity/block-content-to-html');
-const { O_DIRECTORY } = require('constants');
-const { default: organization } = require('../../backend/schemas/organization');
-const { assert } = require('console');
 
 // passing env vars to Sanity.io
 const sanity = sanityClient({
@@ -24,15 +21,15 @@ exports.handler = async () => {
 				name: organization.name,
 				description: organization.blurb,
 				url: `${process.env.URL}/.netlify/functions/getOrgs`,
-				donationAmount: JSON.stringify(organization),
+				donationAmount: organization.defaultOrganizationVariant.amount,
 				body: blocksToHtml({blocks: organization.body}),
 				website: organization.website,
 				twitter: organization.twitter,
 			};
 			// check if there's an image then assign it
-			const image = organization.defaultVariant.images &&
-			  organization.defaultVariant.images.length > 0 ?
-				  organization.defaultVariant.images[0].asset._ref
+			const image = organization.defaultOrganizationVariant.images &&
+			  organization.defaultOrganizationVariant.images.length > 0 ?
+				  organization.defaultOrganizationVariant.images[0].asset._ref
 					: null;
 			
 			if (image) {
