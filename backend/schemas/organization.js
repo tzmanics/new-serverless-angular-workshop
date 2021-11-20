@@ -23,7 +23,7 @@ export default {
       type: 'url'
     },
     {
-      name: 'defaultOrganizationVariant',
+      name: 'defaultVariant',
       title: 'Default variant',
       type: 'organizationVariant',
     },

@@ -22,7 +22,7 @@ exports.handler = async () => {
 			const output = {
 				id: organization.slug.current,
 				name: organization.name,
-				descriotion: organization.blurb,
+				description: organization.blurb,
 				url: `${process.env.URL}/.netlify/functions/getOrgs`,
 				donationAmount: organization.defaultVariant.amount,
 				body: blocksToHtml({blocks: organization.body}),
