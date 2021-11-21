@@ -7,31 +7,24 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'standard-packages',
-    loadChildren: () =>
-      import('./standard-packages/standard-packages.module').then(
-        (m) => m.StandardPackagesModule
-      ),
-  },
-  {
-    path: 'elite-packages',
-    loadChildren: () =>
-      import('./elite-packages/elite-packages.module').then(
-        (m) => m.ElitePackagesModule
-      ),
-  },
-  {
     path: 'about',
     loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
   },
-  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./account/account.module').then((m) => m.AccountModule),
+  },
+  { path: 'donate', loadChildren: () => import('./donate/donate.module').then(m => m.DonateModule) },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

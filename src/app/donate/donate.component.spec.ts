@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ElitePackagesComponent } from './elite-packages.component';
+import { DonateComponent } from './donate.component';
 
-describe('ElitePackagesComponent', () => {
-  let component: ElitePackagesComponent;
-  let fixture: ComponentFixture<ElitePackagesComponent>;
+describe('DonateComponent', () => {
+  let component: DonateComponent;
+  let fixture: ComponentFixture<DonateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ElitePackagesComponent ]
+      declarations: [ DonateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ElitePackagesComponent);
+    fixture = TestBed.createComponent(DonateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
