@@ -5,12 +5,10 @@
   *ngIf="organizationList | async as organizationList; else loadingBlock"
 >
   <app-organization-list
-    class="product-item"
+    class="organization-item"
     *ngFor="let organization of organizationList"
     [organization]="organization"
-  >
-    {{ organization.name }}
-  </app-organization-list>
+  ></app-organization-list>
 </div>
 <ng-template #loadingBlock>
   <p>Loading organizations...</p>
