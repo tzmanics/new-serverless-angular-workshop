@@ -7,4 +7,5 @@ export interface Organization {
   body: string;
   website: string;
   twitter: string;
+  image: string;
 }
