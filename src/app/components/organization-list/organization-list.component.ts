@@ -13,7 +13,6 @@ export class OrganizationListComponent implements OnInit {
     description: 'This will describe the organization.',
     url: 'https://this-site.org/organization-page',
     donationAmount: '10',
-    body: 'This will tell more about the organization.',
     website: 'https://organization.org',
     twitter: 'https://twitter.com/organization',
     image: 'https://bit.ly/2ZdePYO',

@@ -1,69 +1,63 @@
 export default {
-  name: 'organization',
-  title: 'Organization',
-  type: 'document',
+  name: "organization",
+  title: "Organization",
+  type: "document",
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string',
+      name: "name",
+      title: "Name",
+      type: "string",
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
     },
     {
-      name: 'website',
-      title: 'Webstie',
-      type: 'url'
+      name: "website",
+      title: "Webstie",
+      type: "url",
     },
     {
-      name: 'defaultVariant',
-      title: 'Default variant',
-      type: 'organizationVariant',
+      name: "defaultVariant",
+      title: "Default variant",
+      type: "organizationVariant",
     },
     {
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{ type: 'string' }],
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
     },
     {
-      name: 'blurb',
-      title: 'Blurb',
-      type: 'string',
+      name: "blurb",
+      title: "Blurb",
+      type: "string",
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
+      name: "categories",
+      title: "Categories",
+      type: "array",
       of: [
         {
-          type: 'reference',
-          to: { type: 'category' },
+          type: "reference",
+          to: { type: "category" },
         },
       ],
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'array',
-      of: [{ type: 'block' }],
+      name: "twitter",
+      title: "Twitter",
+      type: "url",
     },
-    {
-      name: 'twitter',
-      title: 'Twitter',
-      type: 'url',
-    }
   ],
   preview: {
     select: {
-      title: 'name',
+      title: "name",
     },
   },
 };
