@@ -9,7 +9,6 @@
 
 # dependencies
 /node_modules
-/backend/node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -48,3 +47,7 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+# sanity backend
+/backend/node_modules
+/backend/dist
