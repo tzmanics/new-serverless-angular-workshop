@@ -16,19 +16,16 @@ exports.handler = async () => {
     const allOrganizations = results.map((organization) => {
       // assign properties
       const output = {
-        id: organization.slug.current,
         name: organization.name,
-        description: organization.blurb,
-        url: `${process.env.URL}/.netlify/functions/getOrgs`,
-        donationAmount: organization.defaultOrganizationVariant.amount,
         website: organization.website,
+        donationAmount: organization.donationAmount,
+        description: organization.shortDescription,
         twitter: organization.twitter,
       };
       // check if there's an image then assign it
       const image =
-        organization.defaultOrganizationVariant.images &&
-        organization.defaultOrganizationVariant.images.length > 0
-          ? organization.defaultOrganizationVariant.images[0].asset._ref
+        organization.images && organization.images.length > 0
+          ? organization.images[0].asset._ref
           : null;
 
       if (image) {

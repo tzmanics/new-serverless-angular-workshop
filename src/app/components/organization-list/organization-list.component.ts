@@ -8,12 +8,10 @@ import { Organization } from 'src/app/models/Organization';
 })
 export class OrganizationListComponent implements OnInit {
   @Input() organization: Organization = {
-    id: '1',
     name: 'Organization Name',
-    description: 'This will describe the organization.',
-    url: 'https://this-site.org/organization-page',
-    donationAmount: '10',
     website: 'https://organization.org',
+    description: 'This will describe the organization.',
+    donationAmount: '10',
     twitter: 'https://twitter.com/organization',
     image: 'https://bit.ly/2ZdePYO',
   };

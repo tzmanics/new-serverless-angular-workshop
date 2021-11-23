@@ -9,13 +9,10 @@ export default {
       type: "string",
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [{ type: "image" }],
     },
     {
       name: "website",
@@ -23,19 +20,13 @@ export default {
       type: "url",
     },
     {
-      name: "defaultVariant",
-      title: "Default variant",
-      type: "organizationVariant",
+      name: "donationAmount",
+      title: "Donation Amount",
+      type: "number",
     },
     {
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "string" }],
-    },
-    {
-      name: "blurb",
-      title: "Blurb",
+      name: "shortDescription",
+      title: "Short Description",
       type: "string",
     },
     {

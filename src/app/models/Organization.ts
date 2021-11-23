@@ -1,10 +1,8 @@
 export interface Organization {
-  id: string;
   name: string;
-  description: string;
-  url: string;
-  donationAmount: string;
   website: string;
+  donationAmount: string;
+  description: string;
   twitter: string;
   image: string;
 }
