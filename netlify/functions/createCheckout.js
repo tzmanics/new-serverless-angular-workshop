@@ -1,6 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-exports.handler = async((event) => {
+exports.handler = async (event) => {
   const organization = JSON.parse(event.body);
   const lineItems = [
     {
@@ -8,7 +8,7 @@ exports.handler = async((event) => {
       currency: "USD",
       description: organization.description,
       images: [organization.image],
-      amount: `${organization.donationAmont}00`,
+      amount: `${organization.donationAmount}00`,
       quantity: 1,
     },
   ];
@@ -16,7 +16,7 @@ exports.handler = async((event) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     success_url: process.env.URL,
-    cancel_url: process.env.URL,
+    cancel_url: `${process.env.URL}/donate`,
     line_items: lineItems,
   });
 
@@ -27,4 +27,4 @@ exports.handler = async((event) => {
       publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     }),
   };
-});
+};
