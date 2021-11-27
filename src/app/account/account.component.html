@@ -1,16 +1,7 @@
 <p>account works!</p>
 
-user info {{ auth.isAuthenticated$ | async }}
-{{ auth.user$ | async }}
-
-<div class="user-profile" *ngIf="auth.user$ | async as user">
-  {{ user | json }}
-</div>
-
-<div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-  <button (click)="logout()">Log out</button>
-</div>
-
-<ng-template #loggedOut>
-  <button (click)="auth.loginWithRedirect()">Log in</button>
-</ng-template>
+<!-- <div class="user-profile" *ngIf="auth.user$ | async as user">
+  <img src="{{ user.picture }}" />
+  <p>Name: {{ user.given_name }}</p>
+  <p>email: {{ user.email }}</p>
+</div> -->
