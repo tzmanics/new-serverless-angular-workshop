@@ -1,6 +1,8 @@
 <p>account works!</p>
 
-{{ auth.isAuthenticated$ | async }}
+user info {{ auth.isAuthenticated$ | async }}
+{{ auth.user$ | async }}
+
 <div class="user-profile" *ngIf="auth.user$ | async as user">
   {{ user | json }}
 </div>

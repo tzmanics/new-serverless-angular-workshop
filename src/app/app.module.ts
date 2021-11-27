@@ -7,6 +7,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -14,10 +15,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    AuthModule.forRoot({
-      domain: 'tzmanics.auth0.com',
-      clientId: 'kDdgqBa0zN-v_pYu3DtqUfGw8PgEcwxx',
-    }),
+    AuthModule.forRoot(environment.auth),
   ],
   providers: [],
   bootstrap: [AppComponent],
