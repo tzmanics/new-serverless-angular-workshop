@@ -1,5 +1,7 @@
 const axios = require("axios").default;
-exports.handler = async (userId) => {
+
+exports.handler = async (event) => {
+  const userId = event.headers.userid;
   let rolesList = [];
   const options = {
     method: "GET",
@@ -13,6 +15,7 @@ exports.handler = async (userId) => {
     .request(options)
     .then(function (response) {
       rolesList = response.data;
+      console.log(rolesList);
     })
     .catch(function (error) {
       console.error(error);

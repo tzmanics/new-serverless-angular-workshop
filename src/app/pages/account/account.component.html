@@ -1,7 +1,12 @@
-<p>account works!</p>
-
 <div class="user-profile" *ngIf="auth.user$ | async as user">
   <img src="{{ user.picture }}" />
   <p>Name: {{ user.given_name }}</p>
   <p>email: {{ user.email }}</p>
+</div>
+<button (click)="checkIsAdmin(userId)">Edit Donation Amount</button>
+<div *ngIf="isAdmin">
+  <input type="radio" name="amount" value="10" checked />$10
+  <input type="radio" name="amount" value="20" />$20
+  <input type="radio" name="amount" value="30" />$30
+  <input type="radio" name="amount" value="40" />$40
 </div>
