@@ -7,7 +7,7 @@ exports.handler = async (event) => {
     method: "GET",
     url: `https://tzmanics.auth0.com/api/v2/users/${userId}/roles`,
     headers: {
-      authorization: `Bearer ${process.env.AUTH0_MANAGEMENT_API_TOKEN}`,
+      authorization: `Bearer ${process.env.AUTH0_TOKEN}`,
     },
   };
 
