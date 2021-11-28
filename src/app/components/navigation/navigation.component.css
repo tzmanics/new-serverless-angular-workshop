@@ -1,0 +1,16 @@
+nav {
+  height: 60px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+nav ul a {
+  display: block;
+  text-decoration: none;
+  width: 5em;
+}
