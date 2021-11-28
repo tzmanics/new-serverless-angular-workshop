@@ -6,23 +6,24 @@ import { AuthGuard } from '@auth0/auth0-angular';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'about',
     loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+      import('./pages/about/about.module').then((m) => m.AboutModule),
   },
   {
     path: 'account',
     loadChildren: () =>
-      import('./account/account.module').then((m) => m.AccountModule),
+      import('./pages/account/account.module').then((m) => m.AccountModule),
     canActivate: [AuthGuard],
   },
   {
     path: 'donate',
     loadChildren: () =>
-      import('./donate/donate.module').then((m) => m.DonateModule),
+      import('./pages/donate/donate.module').then((m) => m.DonateModule),
   },
 ];
 
