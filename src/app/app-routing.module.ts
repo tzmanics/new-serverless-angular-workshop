@@ -10,11 +10,6 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'about',
-    loadChildren: () =>
-      import('./pages/about/about.module').then((m) => m.AboutModule),
-  },
-  {
     path: 'account',
     loadChildren: () =>
       import('./pages/account/account.module').then((m) => m.AccountModule),
