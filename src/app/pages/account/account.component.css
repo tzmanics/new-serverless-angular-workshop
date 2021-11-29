@@ -1,0 +1,19 @@
+.user-profile,
+.admin-section {
+  padding: 20px;
+  font-size: 25px;
+}
+
+button {
+  font-size: 15px;
+  height: 30px;
+  margin-bottom: 20px;
+  width: 150px;
+}
+
+.donation-amount {
+  font-size: 20px;
+}
+input[type="radio"] {
+  margin: 15px;
+}
