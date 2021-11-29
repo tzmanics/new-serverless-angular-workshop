@@ -1,7 +1,18 @@
-.orgnization-list {
-  display: flex;
-  justify-content: center;
+h1 {
+  font-size: 25px;
+}
+p {
+  font-size: 35px;
+  margin: 15px;
+}
+.donate-page {
+  margin: 50px auto;
+  text-align: center;
+  width: 95%;
 }
 .organization-item {
-  width: 30%;
+  display: inline-flex;
+  max-width: 300px;
+  padding: 10px;
+  text-align: left;
 }
