@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DonateRoutingModule } from './donate-routing.module';
 import { DonateComponent } from './donate.component';
-import { OrganizationListComponent } from '../../components/organization-list/organization-list.component';
+import { OrganizationItemComponent } from '../../components/organization-item/organization-item.component';
 
 @NgModule({
-  declarations: [DonateComponent, OrganizationListComponent],
+  declarations: [DonateComponent, OrganizationItemComponent],
   imports: [CommonModule, DonateRoutingModule],
 })
 export class DonateModule {}

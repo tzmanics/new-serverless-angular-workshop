@@ -1,25 +1,25 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="">Home</a>
+      <a routerLink="">HOME</a>
     </li>
     <li>
-      <a routerLink="donate">Donate</a>
+      <a routerLink="donate">DONATE</a>
     </li>
     <li>
-      <a routerLink="account">Account</a>
+      <a routerLink="account">ACCOUNT</a>
     </li>
     <li>
       <button
         *ngIf="auth.isAuthenticated$ | async; else loggedOut"
         (click)="logout()"
       >
-        Log out
+        LOG OUT
       </button>
     </li>
   </ul>
 </nav>
 
 <ng-template #loggedOut>
-  <button (click)="auth.loginWithRedirect()">Log in</button>
+  <button (click)="auth.loginWithRedirect()">LOG IN</button>
 </ng-template>

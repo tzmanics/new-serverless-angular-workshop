@@ -1,0 +1,7 @@
+.orgnization-list {
+  display: flex;
+  justify-content: center;
+}
+.organization-item {
+  width: 30%;
+}

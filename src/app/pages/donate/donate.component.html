@@ -1,14 +1,15 @@
-<h1>Here are some great Organizations that need your help!</h1>
+<h1>Here are some great Organizations that need your help.</h1>
+<p>Donate today!</p>
 
 <div
   class="organiztion-list"
   *ngIf="organizationList | async as organizationList; else loadingBlock"
 >
-  <app-organization-list
+  <app-organization-item
     class="organization-item"
     *ngFor="let organization of organizationList"
     [organization]="organization"
-  ></app-organization-list>
+  ></app-organization-item>
 </div>
 <ng-template #loadingBlock>
   <p>Loading organizations...</p>

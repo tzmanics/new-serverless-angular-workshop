@@ -5,11 +5,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Organization } from 'src/app/models/Organization';
 
 @Component({
-  selector: 'app-organization-list',
-  templateUrl: './organization-list.component.html',
-  styleUrls: ['./organization-list.component.css'],
+  selector: 'app-organization-item',
+  templateUrl: './organization-item.component.html',
+  styleUrls: ['./organization-item.component.css'],
 })
-export class OrganizationListComponent implements OnInit {
+export class OrganizationItemComponent implements OnInit {
   private response: any;
 
   @Input() organization: Organization = {
@@ -20,6 +20,7 @@ export class OrganizationListComponent implements OnInit {
     twitter: 'https://twitter.com/organization',
     image: 'https://bit.ly/2ZdePYO',
   };
+
   constructor(private http: HttpClient) {}
 
   async triggerCreateCheckout(eventOrganization: any) {
