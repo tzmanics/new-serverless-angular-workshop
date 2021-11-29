@@ -15,7 +15,6 @@ exports.handler = async (event) => {
     .request(options)
     .then(function (response) {
       rolesList = response.data;
-      console.log(rolesList);
     })
     .catch(function (error) {
       console.error(error);

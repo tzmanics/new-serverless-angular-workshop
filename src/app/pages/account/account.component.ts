@@ -27,7 +27,7 @@ export class AccountComponent implements OnInit {
     this.rolesListService
       .getRolesList(userId)
       .subscribe((roles) =>
-        roles.some((x) => x.name === 'admin')
+        roles.some((role) => role.name === 'admin')
           ? (this.isAdmin = true)
           : alert('⛔️ You do not have Admin privlidges. ⛔️')
       );
