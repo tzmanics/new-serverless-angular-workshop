@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe } from '@stripe/stripe-js';
+import { lastValueFrom } from 'rxjs';
 
 import { Organization } from 'src/app/models/Organization';
 
@@ -10,8 +11,6 @@ import { Organization } from 'src/app/models/Organization';
   styleUrls: ['./organization-item.component.css'],
 })
 export class OrganizationItemComponent implements OnInit {
-  private response: any;
-
   @Input() organization: Organization = {
     name: 'Organization Name',
     website: 'https://organization.org',
@@ -24,14 +23,17 @@ export class OrganizationItemComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   async triggerCreateCheckout(eventOrganization: any) {
-    this.response = await this.http
-      .post('/.netlify/functions/createCheckout', eventOrganization, {
+    const createCheckoutRepsonse = await this.http.post(
+      '/.netlify/functions/createCheckout',
+      eventOrganization,
+      {
         headers: {
           'Content-Type': 'application/json',
         },
-      })
-      .toPromise();
-    this.openStripe(this.response);
+      }
+    );
+    const lastResponse = await lastValueFrom(createCheckoutRepsonse);
+    this.openStripe(lastResponse);
   }
 
   openStripe = async (stripeParams: any) => {
